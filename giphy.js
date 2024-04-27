@@ -10,19 +10,34 @@ function formSubmitted(event) {
 function renderGifs(response) {
     let result = '';
 
-    for (let meme of response.data) {
-        result += `
-        <img src="${meme.images.original.url}" alt="${meme.alt_text}">
-        `;
+    if (response.data.length === 0) {
+        renderError("Error: No Results");
+    } else {
+
+        for (let meme of response.data) {
+            result += `
+            <img src="${meme.images.original.url}" alt="${meme.alt_text}" class="meme-img">
+            `;
+        }
     }
+
     document.querySelector(".js-memes-container").innerHTML = 
     result;
 }
 
+function renderError(message) {
+    
+    document.querySelector(".js-memes-container").innerHTML = 
+    `div class='error'>${message}</div>`;
+}
+
+
 function getMemes(searchExpression) {
     fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=25&${API_SETTINGS}`)
     .then(data => data.json())
-    .then(renderGifs);
+    .then(renderGifs)
+    .catch(renderError)
+    ;
 }
 
 document.querySelector("#memeForm").addEventListener('submit', formSubmitted);
