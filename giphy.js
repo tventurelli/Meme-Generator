@@ -4,7 +4,8 @@ const API_SETTINGS = "offset=0&rating=g&lang=en&bundle=messaging_non_clips";
 function formSubmitted(event) {
     event.preventDefault();
     let inputFieldContent = document.querySelector('[name=memeInput]').value;
-    getMemes(inputFieldContent);
+    let inputNumber = document.querySelector('[name=memeNumber]').value;
+    getMemes(inputFieldContent, inputNumber);
 }
 
 function renderGifs(response) {
@@ -32,8 +33,8 @@ function renderError(message) {
 }
 
 
-function getMemes(searchExpression) {
-    fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=25&${API_SETTINGS}`)
+function getMemes(searchExpression, memeNumber) {
+    fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=${memeNumber}&${API_SETTINGS}`)
     .then(data => data.json())
     .then(renderGifs)
     .catch(renderError)
