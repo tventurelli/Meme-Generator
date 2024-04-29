@@ -60,7 +60,7 @@ body {
     text-shadow: 2px 2px black;
 }
 
-.footer {
+.footer-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
