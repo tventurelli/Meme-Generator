@@ -12,7 +12,8 @@
     <header>
         <nav class="navbar navbar-custom navbar-expand-sm bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img class="icon" src="./images/mg_favicon.png" alt="logo">Meme Generator</a>
+              <a class="navbar-brand" href="#"><img class="icon" src="./images/mg_favicon.png" alt="logo"></a>
+              <a class="navbar-brand" href="#">Meme Generator</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -36,11 +37,11 @@
     <div class="textPanel">
     <h1 id="pageTitle">Meme Generator</h1>
     <form class="memeForm" id="memeForm" action="." method="GET">
-        <label for="memeInput">Meme:</label>
-        <input type="text" id="memeInput" name="memeInput" required>
+        <label class="formItem" for="memeInput">Meme:</label>
+        <input class="formItem" type="text" id="memeInput" name="memeInput" required>
         <br>
-        <label for="memeNumber">Number of memes:</label>
-        <input type="text" id="memeNumber" name="memeNumber" required>
+        <label class="formItem" for="memeNumber">Number of memes:</label>
+        <input class="formItem" type="text" id="memeNumber" name="memeNumber" required>
         <hr>
         <button type="submit" class="btn btn-primary bg-gradient">Submit</button>
     </form>
