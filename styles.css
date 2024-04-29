@@ -1,7 +1,25 @@
 body {
     color: white;
-    background-color: rgb(3, 49, 28);
+    background-image: linear-gradient(to bottom right, rgb(3, 49, 28), rgb(6, 71, 6));
     font-family: 'Josefin';
+}
+
+.navbar-custom {
+    background-color: rgb(57, 9, 102) !important; /* Used to take precedence over Bootstrap default */
+    
+}
+
+.navbar-brand {
+    color:rgb(18, 103, 182);
+}
+
+.nav-link {
+    color:rgb(41, 194, 125) !important; /* Used to take precedence over Bootstrap default */
+}
+
+.icon {
+    height: 30px;
+    margin: 10px;
 }
 
 .memes-container {
@@ -37,9 +55,33 @@ body {
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
-    border: 2px solid rgb(136, 136, 136);
+    border: 2px solid rgba(20, 20, 20, 0.75);
     padding: 1rem;
     text-shadow: 2px 2px black;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type:none;
+}
+
+.footer-item {
+    margin: 5px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.footer-item a {
+    color: rgb(103, 118, 255);
+}
+
+.footer-item a:hover {
+    color:rgb(219, 26, 84);
+}
+
+.footer-item a:visited {
+    color: rgb(155, 154, 231);
 }
 
 #pageTitle {
