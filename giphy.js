@@ -33,14 +33,15 @@ function renderError(message) {
 
 function getMemes(searchExpression, memeNumber) {
     memeNumber = memeNumber.trim();
-    if (searchExpression.trim() === "") {
+    if (searchExpression.trim() === "") {                       /* Handles empty strings */ 
         renderError("Error: Please provide a valid search expression.");
-    } else if (memeNumber === "" || isNaN(memeNumber)) {
+    } else if (memeNumber === "" || isNaN(memeNumber)) {        /* Handles empty strings and non-numeric values */
         renderError("Error: Please provide a number.");
     }
     else {
+        let number = Math.floor(parseFloat(memeNumber));        /* If user enters decimal number it's rounded down to nearest integer */
         document.querySelector(".error-container").innerHTML = "";
-        fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=${memeNumber}&${API_SETTINGS}`)
+        fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=${number}&${API_SETTINGS}`)
         .then(data => data.json())
         .then(renderGifs)
         .catch(renderError)
