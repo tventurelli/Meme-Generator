@@ -14,31 +14,38 @@ function renderGifs(response) {
     if (response.data.length === 0) {
         renderError("Error: No Results");
     } else {
-
         for (let meme of response.data) {
             result += `
             <img src="${meme.images.original.url}" alt="${meme.alt_text}" class="meme-img">
             `;
         }
     }
-
     document.querySelector(".js-memes-container").innerHTML = 
     result;
 }
 
 function renderError(message) {
     
-    document.querySelector(".js-memes-container").innerHTML = 
-    `div class='error'>${message}</div>`;
+    document.querySelector(".error-container").innerHTML = 
+    `<div class='error'>${message}</div>`;
 }
 
 
 function getMemes(searchExpression, memeNumber) {
-    fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=${memeNumber}&${API_SETTINGS}`)
-    .then(data => data.json())
-    .then(renderGifs)
-    .catch(renderError)
+    memeNumber = memeNumber.trim();
+    if (searchExpression.trim() === "") {
+        renderError("Error: Please provide a valid search expression.");
+    } else if (memeNumber === "" || isNaN(memeNumber)) {
+        renderError("Error: Please provide a number.");
+    }
+    else {
+        document.querySelector(".error-container").innerHTML = "";
+        fetch(`${API_PREFIX}${API_KEY}&q=${searchExpression}&limit=${memeNumber}&${API_SETTINGS}`)
+        .then(data => data.json())
+        .then(renderGifs)
+        .catch(renderError)
     ;
+    }
 }
 
 document.querySelector("#memeForm").addEventListener('submit', formSubmitted);
