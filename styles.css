@@ -42,7 +42,7 @@ body {
     margin: 5px;
 }
 
-.textPanel {
+.centralPanel {
     background-image: linear-gradient(to bottom right,  rgb(72, 13, 128), rgb(75, 1, 75));
     width: 800px;
     margin: auto;
@@ -52,6 +52,21 @@ body {
     border-radius: 25px;
     padding: 1rem;
     text-shadow: 2px 2px black;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) { /* Decreases panel width after passing bootstrap breakpoint */
+    .centralPanel {
+        width: 576px;
+    }
+}
+
+@media screen and (max-width: 576px) { /* Moves panel content to edge to maximize visibility */
+    .centralPanel {
+        justify-content: flex-start;
+    }
 }
 
 #pageTitle {

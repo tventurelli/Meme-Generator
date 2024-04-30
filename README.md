@@ -1,6 +1,6 @@
 Hosting link: https://tventurelli.github.io/Meme-Generator
 
-# Meme Generator
+# Meme Machine
 
 ## User Stories
 
@@ -29,3 +29,4 @@ SO THAT I can avoid doing more substantial things.
 
 ## Inspiration
 
+Golf Scoreboards
