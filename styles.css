@@ -59,7 +59,8 @@ body {
 
 @media screen and (max-width: 768px) { /* Decreases panel width after passing bootstrap breakpoint */
     .centralPanel {
-        width: 576px;
+        width: 90%;
+        max-width: 576px;
     }
 }
 
