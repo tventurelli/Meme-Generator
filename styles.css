@@ -1,12 +1,13 @@
 body {
     color: white;
     background-image: linear-gradient(to bottom right, rgb(3, 49, 28), rgb(6, 71, 6));
+    background-repeat: repeat;
     font-family: 'Josefin';
 }
 
 .navbar {
     background-color: rgb(57, 9, 102) !important; /* Used to take precedence over Bootstrap default */
-    border-bottom: 2px outset rgb(12, 92, 32);
+    border-bottom: 3px outset rgb(12, 88, 31);
     
 }
 
@@ -15,12 +16,31 @@ body {
     font-size: 24px;
 }
 
+.navbar-brand:hover {
+    color:rgb(116, 21, 117);
+    font-size: 24px;
+}
+
+.navbar-brand:focus {
+    color:rgb(116, 21, 117);
+    font-size: 24px;
+}
+
 .nav-link {
-    color:rgb(41, 194, 66) !important; /* Used to take precedence over Bootstrap default */
+    color:rgb(33, 155, 54) !important; /* Used to take precedence over Bootstrap default */
+    font-size: 21px;
+}
+
+.nav-link:hover {
+    color: rgb(29, 109, 35) !important;
+}
+
+.nav-item {
+    font-size: 17px;
 }
 
 .icon {
-    height: 30px;
+    height: 50px;
     margin: 5px;
 }
 
@@ -62,7 +82,7 @@ body {
     border-color: grey;
     border-radius: 10px;
     color: rgb(0, 0, 0);
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .btn-primary:hover {
@@ -70,13 +90,15 @@ body {
     border-color: rgb(255, 255, 255);
 }
 
+
+
 .textPanel {
-    background-image: linear-gradient(to bottom right,  rgb(110, 1, 110), rgb(57, 9, 102));
+    background-image: linear-gradient(to bottom right,  rgb(72, 13, 128), rgb(75, 1, 75));
     width: 800px;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
-    border: 2px solid rgba(20, 20, 20, 0.75);
+    border: 4px solid rgb(9, 65, 11);
     border-radius: 10px;
     padding: 1rem;
     text-shadow: 2px 2px black;
@@ -91,23 +113,32 @@ body {
 
 .footer-item {
     margin: 5px;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 
 .footer-item a {
-    color: rgb(103, 118, 255);
+    color: rgb(235, 235, 235);
+    background-image: linear-gradient(to right, darkgreen, rgb(2, 92, 2));
+    padding: 0.2em 0.5em; 
+    border-radius: 4px; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
 }
 
 .footer-item a:hover {
-    color:rgb(219, 26, 84);
-}
-
-.footer-item a:visited {
-    color: rgb(155, 154, 231);
+    color:rgb(194, 194, 194);
+    background-image: linear-gradient(to right, rgb(14, 75, 65), rgb(22, 61, 80));
 }
 
 #pageTitle {
     display: grid;
     justify-content: center;
     margin-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+    padding-bottom: 15px;
+    border-image: linear-gradient(to right, #443f3f, #77431b); 
+    border-image-slice: 1; /* Border gradient does not appear without this */
+
 }
